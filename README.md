@@ -6,14 +6,15 @@
 $ kubectl kustomize overlays/online
 ```
 
-**result** 
+## result
 
 ```yaml
-# make dryrun.online
+
+# kubectl kustomize overlays/online
 
 ---
 
-kubectl kustomize overlays/online
+
 apiVersion: v1
 data:
   app.cfg: |
