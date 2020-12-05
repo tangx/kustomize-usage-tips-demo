@@ -1,0 +1,32 @@
+# kubectl create deployment nginx-demo --image=tangx/nginx:tools -o yaml --dry-run=client
+
+--- 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx-demo
+  name: nginx-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-demo
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx-demo
+    spec:
+      containers:
+      - image: tangx/nginx:tools
+        name: nginx
+        resources:
+          requests:
+            cpu: 10m
+            memory: 10Mi
+          limits:
+            cpu: 10m
+            memory: 10Mi
